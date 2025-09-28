@@ -3,56 +3,62 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
 import TechIcon from '@/components/TechIcon';
+import plantimecImg from '@/assets/img/plantimec.webp';
+import iqnImg from '@/assets/img/iqn.webp';
+import covaoImg from '@/assets/img/covao.webp';
+import yfseImg from '@/assets/img/yfse.webp';
+import saoImg from '@/assets/img/sao.webp';
+import camaraImg from '@/assets/img/camara.webp';
 
 const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "Sistema de Gestión Empresarial",
-      company: "Genérico",
-      description: "Aplicación web completa para gestión de inventarios, ventas y reportes con dashboard interactivo.",
-      technologies: ["Laravel", "PHP", "MySQL", "Bootstrap", "JavaScript"],
-      image: "Sistema de gestión empresarial con dashboard moderno"
+      title: "Sitio Web Oficial + Agenda de Citas en Línea",
+      company: "Plantimec Costa Rica",
+      description: "Desarrollo de sitio web corporativo e informativo con sistema de gestión de citas en línea para clientes existentes y potenciales.",
+      technologies: ["WordPress", "PHP", "NodeJS (ExpressJS)", "Java", "Bootstrap", "Git", "Github"],
+      image: plantimecImg
     },
     {
       id: 2,
-      title: "E-commerce Responsivo",
-      company: "Genérico",
-      description: "Tienda online moderna con carrito de compras, pasarela de pagos y panel administrativo.",
-      technologies: ["React", "Node.js", "Express", "TailwindCSS", "Stripe"],
-      image: "E-commerce moderno con diseño responsivo"
+      title: "Sitio Web Oficial + Formulario de reclutamiento",
+      company: "Importadora Química Del Norte S.A",
+      description: "Diseño y desarrollo de sitio web y galeria de inventario, además de implementación de formulario de reclutamiento en línea para facilitar la captación de talento.",
+      technologies: ["HTML", "CSS", "TailwindCSS", "JS", "PHP", "MySQL", "Git", "Github"],
+      image: iqnImg
     },
     {
       id: 3,
-      title: "Portal Corporativo WordPress",
-      company: "Genérico",
-      description: "Sitio web corporativo con CMS personalizado, blog integrado y optimización SEO.",
-      technologies: ["WordPress", "PHP", "CSS", "JavaScript", "MySQL"],
-      image: "Portal corporativo elegante con WordPress"
+      title: "Sistema de Administración Institucional",
+      company: "COVAO | Colegio Vocacional de Artes y Oficios",
+      description: "Sistema Institucional con capacidad de procesar +500 solicitudes diarias (retiros, devoluciones, prestamos) de aulas, gestionar usuarios, roles y permisos, y generar reportes administrativos.",
+      technologies: ["PHP", "HTML", "CSS", "Bootstrap", "JS", "jQuery", "MySQL"],
+      image: covaoImg
     },
     {
       id: 4,
-      title: "API REST para Mobile",
-      company: "Genérico",
-      description: "API robusta para aplicación móvil con autenticación JWT y documentación completa.",
-      technologies: [".NET Core", "C#", "SQL Server", "Swagger", "Azure"],
-      image: "API REST con documentación Swagger"
+      title: "Sitio Web para ONG Internacional",
+      company: "YFSE | Youth for a Sustainable Earth",
+      description: "Rediseño y desarrollo del sitio web oficial de la ONG YFSE de forma voluntaria, con integración de blog, eventos y donaciones en línea.",
+      technologies: ["WordPress", "PHP", "JavaScript", "Elementor", "AWS", "Linux"],
+      image: yfseImg
     },
     {
       id: 5,
-      title: "Dashboard Analytics",
-      company: "Genérico",
-      description: "Panel de control con visualización de datos en tiempo real y reportes automatizados.",
-      technologies: ["Vue.js", "Node.js", "Chart.js", "MongoDB", "Socket.io"],
-      image: "Dashboard de analytics con gráficos interactivos"
+      title: "Tema Dinámico para SAO CRM",
+      company: "PROCOM S.A",
+      description: "Rediseño y desarrollo de un tema personalizado y dinámico para SAO CRM (top productos de PROCOM), mejorando la experiencia del usuario y la interfaz de usuario.",
+      technologies: ["EspoCRM", "Bootstrap", "CSS", "JS", "PHP", "HTML", "Git", "GitLab"],
+      image: saoImg
     },
     {
       id: 6,
-      title: "CMS Headless Personalizado",
-      company: "Genérico",
-      description: "Sistema de gestión de contenidos headless con API GraphQL y panel de administración.",
-      technologies: ["Strapi", "GraphQL", "React", "PostgreSQL", "Vercel"],
-      image: "CMS headless con interfaz moderna"
+      title: "Asesoramiento Sitio Web Actualizado",
+      company: "Cámara de Comercio de Cartago",
+      description: "Consultoría y asesoramiento en la actualización y modernización del sitio web oficial de la Cámara de Comercio de Cartago, mejorando su funcionalidad de contacto y reservas de salas.",
+      technologies: ["WordPress", "MySQL", "GoDaddy Deploy", "PHP", "HTML", "CSS", "JS"],
+      image: camaraImg
     }
   ];
 
@@ -78,7 +84,7 @@ const Portfolio = () => {
             <span className="text-gradient">Experiencia Laboral</span> & Portafolio
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Proyectos que demuestran mis habilidades técnicas y capacidad para crear soluciones digitales efectivas
+            Proyectos principales que demuestran mis habilidades técnicas y capacidad para crear soluciones digitales efectivas en las distintas empresas donde he colaborado
           </p>
         </motion.div>
 
@@ -96,7 +102,7 @@ const Portfolio = () => {
                 <img 
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                   alt={`Proyecto ${project.title}`}
-                 src="https://images.unsplash.com/photo-1572177812156-58036aae439c" />
+                 src={project.image} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <button
@@ -115,7 +121,7 @@ const Portfolio = () => {
               </div>
 
               <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex flex-col justify-between mb-3">
                   <h3 className="text-xl font-semibold text-white">{project.title}</h3>
                   <span className="text-sm text-[var(--primary)] font-medium">{project.company}</span>
                 </div>

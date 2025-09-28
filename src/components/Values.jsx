@@ -112,7 +112,7 @@ const Values = () => {
               href="mailto:ian.rsq@gmail.com"
               className="btn-primary px-8 py-4 rounded-full text-white font-semibold inline-flex items-center gap-2"
             >
-              Hablemos de tu proyecto
+              Contáctame
             </a>
           </div>
         </motion.div>

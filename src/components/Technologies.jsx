@@ -30,19 +30,19 @@ const Technologies = () => {
     {
       title: "CMS",
       icon: <Settings className="w-6 h-6" />,
-      technologies: ["WordPress", "Umbraco", "Strapi"],
+      technologies: ["WordPress", "Elementor", "WooCommerce", "Temas y Plugins Personalizados", "Drupal"],
       color: "from-purple-500 to-pink-500"
     },
     {
       title: "Control de Versiones",
       icon: <GitBranch className="w-6 h-6" />,
-      technologies: ["Git", "GitHub"],
+      technologies: ["Git", "GitHub", "GitLab", "BitBucket"],
       color: "from-orange-500 to-red-500"
     },
     {
       title: "CI/CD",
       icon: <Zap className="w-6 h-6" />,
-      technologies: ["GitHub Actions", "Vercel Deploy"],
+      technologies: ["GitHub Actions", "Vercel Deploy", "Netlify", "GoDaddy", "Hostinger"],
       color: "from-yellow-500 to-orange-500"
     },
     {
@@ -54,22 +54,26 @@ const Technologies = () => {
     {
       title: "Herramientas",
       icon: <Palette className="w-6 h-6" />,
-      technologies: ["Figma", "Postman"],
+      technologies: ["Vite","Figma", "Postman", "Visual Studio Code", "Composer", "npm"],
       color: "from-pink-500 to-rose-500"
     },
     {
       title: "Cloud & Seguridad",
       icon: <Cloud className="w-6 h-6" />,
-      technologies: ["Azure", "AWS", "Vercel", "Netlify", "OWASP Top 10"],
+      technologies: ["Azure", "AWS", "Vercel", "Netlify", "Certificación CompTIA Security+ "],
       color: "from-teal-500 to-blue-500"
     }
   ];
 
   const extraSkills = [
-    "Servicios en la nube (Azure, AWS, Vercel, Netlify)",
-    "Metodologías ágiles (Scrum, Kanban)",
-    "Conocimientos básicos de seguridad web (OWASP Top 10)",
-    "Manejo de APIs REST/GraphQL"
+    "Estudiante avanzado en Informática Empresarial (Universidad de Costa Rica)",
+    "Título Técnico Medio en Informática en Desarrollo Web (COVAO)",
+    "Certificación Inglés Avanzado B2+ (Colegio Universitario de Cartago)",
+    "Formación Profesional en Desarrollo Frontend con React (Oracle Next Education)",
+    "Conocimiento en Metodologías ágiles (Scrum, Kanban)",
+    "Certificaciones internacionales en Redes & Ciberseguridad: (Cisco CCNA 1,2,3 - CompTIA Security+)",
+    "Manejo y creación de APIs REST y SOAP Services",
+    "- De click aquí para conocer mis certificaciones -"
   ];
 
   return (
@@ -85,8 +89,11 @@ const Technologies = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-gradient">Tecnologías</span> & Competencias Técnicas
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-4xl mx-auto">
             Stack tecnológico diverso y en constante evolución para crear soluciones modernas y escalables
+          </p>
+          <p className="text-md text-white-100 max-w-4xl mx-auto mt-4 mb-0">
+            Stack de este sitio: React, Vite, TailwindCSS, Framer Motion, Lucide Icons, Vercel Deploy
           </p>
         </motion.div>
 
@@ -111,7 +118,7 @@ const Technologies = () => {
                 {category.technologies.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="tech-badge px-3 py-1 rounded-full text-xs font-medium text-[var(--primary)]"
+                    className="tech-badge px-3 py-1 rounded-full text-xs font-medium text-white"
                   >
                     {tech}
                   </span>
@@ -133,23 +140,54 @@ const Technologies = () => {
             <div className="p-3 bg-gradient-to-r from-[var(--primary)] to-purple-600 rounded-lg">
               <Shield className="w-6 h-6" />
             </div>
-            <h3 className="text-2xl font-semibold text-white">Competencias Adicionales</h3>
+            <h3 className="text-2xl font-semibold text-white">Estudio & Competencias Adicionales</h3>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {extraSkills.map((skill, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors"
-              >
-                <div className="w-2 h-2 bg-[var(--primary)] rounded-full"></div>
-                <span className="text-gray-300">{skill}</span>
-              </motion.div>
-            ))}
+            {extraSkills.map((skill, index) => {
+              // Check if the skill is the certifications link or the React formation
+              let url = null;
+              if (skill === "- De click aquí para conocer mis certificaciones -") {
+                url = "https://www.credly.com/users/irs19/badges#credly";
+              } else if (skill === "Formación Profesional en Desarrollo Frontend con React (Oracle Next Education)") {
+                url = "https://app.aluracursos.com/user/ian-rsq/fullCertificate/435eecccdf13fc60bdd85c843c01c77d";
+              }
+              if (url) {
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors"
+                  >
+                    <div className="w-2 h-2 bg-[var(--primary)] rounded-full"></div>
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 underline hover:text-blue-300 transition-colors"
+                    >
+                      {skill}
+                    </a>
+                  </motion.div>
+                );
+              }
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors"
+                >
+                  <div className="w-2 h-2 bg-[var(--primary)] rounded-full"></div>
+                  <span className="text-gray-300">{skill}</span>
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
       </div>

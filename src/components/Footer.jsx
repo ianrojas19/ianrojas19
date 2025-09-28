@@ -19,7 +19,7 @@ const Footer = () => {
           once: true
         }} className="text-center md:text-left">
             <h3 className="text-2xl font-bold text-gradient mb-2">Ian Rojas</h3>
-            <p className="text-gray-400">Desarrollador Web Junior</p>
+            <p className="text-gray-400">Diseñador & Desarrollador Web </p>
           </motion.div>
 
           {/* Social Links */}
@@ -38,13 +38,13 @@ const Footer = () => {
             <a href="mailto:ian.rsq@gmail.com" className="p-3 glass-effect rounded-full hover:bg-[var(--primary)]/20 transition-colors group" aria-label="Enviar email">
               <Mail className="w-5 h-5 text-gray-400 group-hover:text-[var(--primary)] transition-colors" />
             </a>
-            <a href="#" onClick={e => {
+            <a href="https://github.com/ianrojas19" onClick={e => {
             e.preventDefault();
             // Toast notification for GitHub
           }} className="p-3 glass-effect rounded-full hover:bg-[var(--primary)]/20 transition-colors group" aria-label="Ver GitHub">
               <Github className="w-5 h-5 text-gray-400 group-hover:text-[var(--primary)] transition-colors" />
             </a>
-            <a href="#" onClick={e => {
+            <a href="https://www.linkedin.com/in/irsq/" onClick={e => {
             e.preventDefault();
             // Toast notification for LinkedIn
           }} className="p-3 glass-effect rounded-full hover:bg-[var(--primary)]/20 transition-colors group" aria-label="Ver LinkedIn">
@@ -84,9 +84,7 @@ const Footer = () => {
         once: true
       }} className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 flex items-center justify-center gap-2">
-            © {currentYear} Ian Rojas. Desarrollado con 
-            <Heart className="w-4 h-4 text-red-500" />
-            y mucho café
+            © {currentYear} Ian Rojas
           </p>
         </motion.div>
       </div>

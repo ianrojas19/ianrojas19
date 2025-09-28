@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-// import { motion } from 'framer-motion';
+// import { moStion } from 'framer-motion';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -37,4 +37,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

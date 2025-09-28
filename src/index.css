@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --primary: #9939dd;
+  --primary: #be64ff;
   --primary-dark: #7c2db8;
   --background: #0a0a0a;
   --surface: #1a1a1a;
@@ -40,7 +40,7 @@ html {
 .glass-effect {
   background: rgba(26, 26, 26, 0.8);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .glow-effect {
@@ -89,9 +89,17 @@ html {
   padding: 5rem 0;
 }
 
+.rounded-lg{
+  border-radius: 0.5rem;
+}
+
 @media (max-width: 768px) {
   .section-padding {
     padding: 3rem 0;
+  }
+
+  #img_ianrojas{
+    display: none;
   }
 }
 
